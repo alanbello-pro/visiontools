@@ -6,10 +6,6 @@
 ![OpenCV](https://img.shields.io/badge/Vision-OpenCV-green?style=for-the-badge&logo=opencv)
 ![PyTorch](https://img.shields.io/badge/Deep%20Learning-PyTorch-red?style=for-the-badge&logo=pytorch)
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Place+Demo+GIF+Here" alt="VisionTools Demo" width="100%">
-</p>
-
 ## 📋 Overview
 
 **VisionTools** is a modular, production-ready computer vision system designed to extract meaningful insights from video feeds. Built with a focus on Clean Architecture and extensibility, it leverages state-of-the-art Deep Learning (YOLOv11) combined with classical computer vision algorithms to perform robust object tracking, speed estimation, and behavioral analysis.
@@ -35,34 +31,6 @@ This project demonstrates advanced engineering capabilities in **MLOps**, **Soft
 - **Configurable Pipeline**: Entire behavior driven by a centralized `config.json` file.
 - **Dual Output**: Generates both visual overlays (Annotated Video) and structured data (CSV) for downstream analytics.
 
----
-
-## 🏗️ System Architecture
-
-```mermaid
-graph TD
-    A[Video Input] --> B(Frame Preprocessing)
-    B --> C{YOLOv11 Inference}
-    C --> D[Object Detection]
-    D --> E[TrackZone Adapter]
-    
-    subgraph Tracking Engine
-    E --> F[Kalman Filter Prediction]
-    F --> G[Data Association]
-    G --> H[Track Lifecycle Manager]
-    end
-    
-    subgraph Analytics
-    H --> I[Speed Calculator]
-    I --> J[Perspective Calibration]
-    end
-    
-    H --> K[Output Buffer]
-    K --> L[Annotated Video]
-    K --> M[Data CSV]
-```
-
----
 
 ## 💻 Getting Started
 
