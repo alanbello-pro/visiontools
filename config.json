@@ -1,0 +1,108 @@
+
+{
+    "IO_CONFIG": {
+        "VIDEO_INPUT": "input/videos/video_01_crop_stabel.mp4",
+        "VIDEO_OUTPUT": "video_output.mp4",
+        "CSV_OUTPUT": "dados_rastreamento.csv",
+        "MALHA_EXPORT_FILENAME": "malha_exportada.csv",
+        "CRIAR_DIRETORIO_SAIDA": true
+    },
+    "GEOMETRY_CONFIG": {
+        "REGIAO_1": [[0, 0], [1920, 0], [1920, 1080], [0, 1080]],
+        "REGIAO_CALIBRACAO_VELOCIDADE": [[444, 215], [1353, 215], [1630, 626], [92, 628]],
+        "ZONA_DE_VALIDACAO": [[444, 215], [1353, 215], [1630, 626], [92, 628]],
+        "MASCARAS_FAIXAS": {
+            "faixa_esquerda": [[602, 0], [826, 0], [483, 1080], [0, 1080], [0, 732]],
+            "faixa_meio": [[828, 0], [1015, 0], [1200, 1080], [500, 1080]],
+            "faixa_direita": [[1018, 0], [1230, 0], [1920, 1080], [1212, 1080]]
+        }
+    },
+    "CALIBRATION_MESH_CONFIG": {
+        "NUM_LINHAS": 31,
+        "NUM_COLUNAS": 4,
+        "LINHAS_ANTES": 13,
+        "LINHAS_DEPOIS": 38,
+        "ESPACAMENTO_LINHAS_M": 560,
+        "ESPACAMENTO_COLUNAS_M": 3340
+    },
+    "MODEL_CONFIG": {
+        "MODELO_YOLO": "input/models/yolo11x.pt",
+        "TRACKZONE_CONF": 0.4,
+        "TRACKZONE_IOU": 0.5,
+        "TRACKZONE_CLASSES": [1, 2, 3, 4, 7],
+        "TRACKZONE_DEVICE": null
+    },
+    "IMAGE_PROCESSING_CONFIG": {
+        "CLIP_LIMIT": 5.0,
+        "TILE_GRID_SIZE": [8, 8],
+        "GAMMA": 1.0,
+        "BILATERAL_D": 12,
+        "SIGMA_COLOR": 100,
+        "SIGMA_SPACE": 100,
+        "ENABLE_PREPROCESSING": true,
+        "SHOW_FILTERS_IN_OUTPUT": false
+    },
+    "TRACKING_CONFIG": {
+        "MAX_FRAMES_LOST": 180,
+        "IOU_THRESHOLD": 0.3,
+        "KALMAN_PROCESS_NOISE": 0.03,
+        "KALMAN_MEASUREMENT_NOISE": 0.5,
+        "TRACKING_COLOR_WEIGHT": 0.6
+    },
+    "COLOR_CONFIG": {
+        "KMEANS_K_CLUSTERS": 3,
+        "KMEANS_MAX_ITER": 10,
+        "KMEANS_EPSILON": 1.0,
+        "KMEANS_ATTEMPTS": 10,
+        "RECALCULATION_INTERVAL": 10,
+        "BACKGROUND_IMAGE_PATH": null,
+        "COLOR_THRESHOLD": 50
+    },
+    "ANNOTATION_CONFIG": {
+        "FONT_SCALE": 0.7,
+        "ID_FONT_SCALE": 0.5,
+        "FONT_THICKNESS": 2,
+        "SPEED_THRESH_LOW": 30,
+        "SPEED_THRESH_MED": 60,
+        "SPEED_COLOR_LOW": [0, 255, 0],
+        "SPEED_COLOR_MED": [0, 255, 255],
+        "SPEED_COLOR_HIGH": [0, 0, 255],
+        "TRACK_COLOR_MULTIPLIER_B": 20,
+        "TRACK_COLOR_MULTIPLIER_G": 30,
+        "TRACK_COLOR_MULTIPLIER_R": 40,
+        "DETECTION_BOX_THICKNESS_PX": 2,
+        "LABEL_Y_OFFSET_PX": 10,
+        "SPEED_ANNOTATION_Y_OFFSET_PX": 40,
+        "SPEED_ANNOTATION_PADDING_PX": 5,
+        "SPEED_ANNOTATION_BG_COLOR_BGR": [0, 0, 0],
+        "TIMER_FONT_SCALE": 0.8,
+        "TIMER_FONT_THICKNESS": 2,
+        "TIMER_TEXT_COLOR_BGR": [0, 0, 255],
+        "TIMER_BG_COLOR_BGR": [255, 255, 255],
+        "TIMER_MARGIN_PX": 20,
+        "TIMER_PADDING_PX": 10,
+        "CLASS_COLORS": {
+            "person": [255, 0, 0],
+            "bicycle": [0, 255, 0],
+            "car": [0, 0, 255],
+            "motorcycle": [255, 255, 0],
+            "bus": [255, 0, 255],
+            "truck": [0, 255, 255]
+        }
+    },
+    "CALCULATION_CONFIG": {
+        "SPEED_MAX_KMH": 50,
+        "SPEED_MIN_KMH": 1,
+        "CSV_ROUND_PRECISION": 3,
+        "CSV_SEPARATOR": ";",
+        "MPS_TO_KMH_CONVERSION": 3.6,
+        "MMPS_TO_MPS_CONVERSION": 1000.0,
+        "CSV_BATCH_SIZE": 100
+    },
+    "GENERAL_CONFIG": {
+        "PROGRESS_BAR_LENGTH": 40,
+        "VIDEO_WRITER_FOURCC": "mp4v",
+        "SHOW_VIDEO_WINDOW": true,
+        "INFERENCE_RESIZE_WIDTH": 640   
+    }
+}
